@@ -1,13 +1,11 @@
 package com.colak.springreactivetutorial.controller;
 
-import com.colak.springreactivetutorial.declarativeclient.Employee;
-import com.colak.springreactivetutorial.declarativeclient.EmployeeClientResponse;
+import com.colak.springreactivetutorial.jpa.Employee;
+import com.colak.springreactivetutorial.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 @RequiredArgsConstructor
 @RestController
@@ -15,13 +13,10 @@ public class EmployeeController {
 
     public static final String EMPLOYEE_URL = "/internal/employees";
 
-    @GetMapping(EMPLOYEE_URL)
-    public Mono<EmployeeClientResponse> getAllFromDatabase() {
-        List<Employee> employeeList = List.of(
-                new Employee(1, "employee1"),
-                new Employee(2, "employee2"));
+    private final EmployeeService employeeService;
 
-        EmployeeClientResponse employeeClientResponse = new EmployeeClientResponse(employeeList);
-        return Mono.just(employeeClientResponse);
+    @GetMapping(EMPLOYEE_URL)
+    public Flux<Employee> findAll() {
+        return employeeService.findAll();
     }
 }

@@ -1,6 +1,6 @@
 package com.colak.springreactivetutorial;
 
-import com.colak.springreactivetutorial.declarativeclient.Employee;
+import com.colak.springreactivetutorial.declarativeclient.EmployeeSummary;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,10 +18,10 @@ class SpringReactiveTutorialApplicationTests {
 
     @Test
     void test_getAllEmployees() {
-        List<Employee> response = webTestClient.get()
+        List<EmployeeSummary> response = webTestClient.get()
                 .uri("/v1/employees")
                 .exchange()
-                .expectBodyList(Employee.class)
+                .expectBodyList(EmployeeSummary.class)
                 .returnResult()
                 .getResponseBody();
 

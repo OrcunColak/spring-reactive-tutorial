@@ -1,4 +1,4 @@
 package com.colak.springreactivetutorial.declarativeclient;
 
-public record Employee(int id, String title) {
+public record EmployeeSummary(int id, String firstName) {
 }

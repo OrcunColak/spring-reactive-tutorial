@@ -1,8 +1,7 @@
 package com.colak.springreactivetutorial.config;
 
-import com.colak.springreactivetutorial.controller.EmployeeClientController;
-import com.colak.springreactivetutorial.controller.EmployeeController;
-import com.colak.springreactivetutorial.declarativeclient.EmployeeClient;
+import com.colak.springreactivetutorial.declarativeclient.EmployeeSummaryClient;
+import jakarta.annotation.Nonnull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,13 +16,13 @@ class HttpClientConfiguration {
     private String baseUrl;
 
     @Bean
-    EmployeeClient productClient(WebClient.Builder builder) {
+    EmployeeSummaryClient employeeSummaryClient(@Nonnull WebClient.Builder builder) {
         WebClient webClient = builder
                 .baseUrl(baseUrl)
                 .build();
         var wca = WebClientAdapter.create(webClient);
         return HttpServiceProxyFactory.builder().exchangeAdapter(wca)
                 .build()
-                .createClient(EmployeeClient.class);
+                .createClient(EmployeeSummaryClient.class);
     }
 }
