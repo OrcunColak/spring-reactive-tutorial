@@ -15,6 +15,7 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    // Return from database
     @GetMapping(EMPLOYEE_URL)
     public Flux<Employee> findAll() {
         return employeeService.findAll();

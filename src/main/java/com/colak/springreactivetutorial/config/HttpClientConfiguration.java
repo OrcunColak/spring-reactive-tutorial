@@ -12,11 +12,10 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 @Configuration
 class HttpClientConfiguration {
 
-    @Value("${client.baseurl}")
-    private String baseUrl;
 
     @Bean
-    EmployeeSummaryClient employeeSummaryClient(@Nonnull WebClient.Builder builder) {
+    EmployeeSummaryClient employeeSummaryClient(@Value("${client.baseurl}") String baseUrl,
+                                                @Nonnull WebClient.Builder builder) {
         WebClient webClient = builder
                 .baseUrl(baseUrl)
                 .build();
