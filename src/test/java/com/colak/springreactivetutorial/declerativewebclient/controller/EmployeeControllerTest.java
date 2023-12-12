@@ -1,7 +1,8 @@
-package com.colak.springreactivetutorial.controller;
+package com.colak.springreactivetutorial.declerativewebclient.controller;
 
-import com.colak.springreactivetutorial.jpa.Employee;
-import com.colak.springreactivetutorial.service.EmployeeService;
+import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeController;
+import com.colak.springreactivetutorial.declerativewebclient.jpa.Employee;
+import com.colak.springreactivetutorial.declerativewebclient.service.EmployeeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;

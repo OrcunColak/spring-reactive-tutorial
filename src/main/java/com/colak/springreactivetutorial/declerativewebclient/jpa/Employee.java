@@ -1,4 +1,4 @@
-package com.colak.springreactivetutorial.jpa;
+package com.colak.springreactivetutorial.declerativewebclient.jpa;
 
 
 import lombok.AllArgsConstructor;

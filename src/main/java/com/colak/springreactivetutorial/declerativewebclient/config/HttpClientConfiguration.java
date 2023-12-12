@@ -1,6 +1,6 @@
-package com.colak.springreactivetutorial.config;
+package com.colak.springreactivetutorial.declerativewebclient.config;
 
-import com.colak.springreactivetutorial.declarativeclient.EmployeeSummaryClient;
+import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummaryClient;
 import jakarta.annotation.Nonnull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

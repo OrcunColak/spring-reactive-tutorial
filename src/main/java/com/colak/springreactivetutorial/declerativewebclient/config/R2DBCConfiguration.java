@@ -1,4 +1,4 @@
-package com.colak.springreactivetutorial.config;
+package com.colak.springreactivetutorial.declerativewebclient.config;
 
 import io.r2dbc.spi.ConnectionFactory;
 import org.springframework.context.annotation.Bean;

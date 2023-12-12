@@ -1,8 +1,8 @@
-package com.colak.springreactivetutorial.service.impl;
+package com.colak.springreactivetutorial.declerativewebclient.service.impl;
 
-import com.colak.springreactivetutorial.jpa.Employee;
-import com.colak.springreactivetutorial.repository.EmployeeRepository;
-import com.colak.springreactivetutorial.service.EmployeeService;
+import com.colak.springreactivetutorial.declerativewebclient.jpa.Employee;
+import com.colak.springreactivetutorial.declerativewebclient.repository.EmployeeRepository;
+import com.colak.springreactivetutorial.declerativewebclient.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

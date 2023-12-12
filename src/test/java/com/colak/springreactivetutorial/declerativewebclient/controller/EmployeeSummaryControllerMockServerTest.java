@@ -1,6 +1,8 @@
-package com.colak.springreactivetutorial.controller;
+package com.colak.springreactivetutorial.declerativewebclient.controller;
 
-import com.colak.springreactivetutorial.declarativeclient.EmployeeSummary;
+import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeController;
+import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeSummaryController;
+import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummary;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

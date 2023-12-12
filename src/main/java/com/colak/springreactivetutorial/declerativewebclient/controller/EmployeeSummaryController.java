@@ -1,7 +1,7 @@
-package com.colak.springreactivetutorial.controller;
+package com.colak.springreactivetutorial.declerativewebclient.controller;
 
-import com.colak.springreactivetutorial.declarativeclient.EmployeeSummary;
-import com.colak.springreactivetutorial.declarativeclient.EmployeeSummaryClient;
+import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummary;
+import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummaryClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
