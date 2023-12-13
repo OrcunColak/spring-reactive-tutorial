@@ -1,6 +1,8 @@
-package com.colak.springreactivetutorial.declerativewebclient.controller;
+package com.colak.springreactivetutorial.declerativewebclient.controller.it;
 
+import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeSummaryController;
 import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummary;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +14,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-class EmployeeSummaryControllerTest {
+@Tag("Integration")
+class EmployeeSummaryControllerITTest {
 
     @Autowired
     WebTestClient webTestClient;

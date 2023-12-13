@@ -1,10 +1,11 @@
-package com.colak.springreactivetutorial.declerativewebclient.controller;
+package com.colak.springreactivetutorial.declerativewebclient.controller.it;
 
 import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeController;
 import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeSummaryController;
 import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummary;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockserver.client.MockServerClient;
 import org.mockserver.model.Header;
@@ -29,7 +30,8 @@ import static org.mockserver.model.JsonBody.json;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
 @Slf4j
-public class EmployeeSummaryControllerMockServerTest {
+@Tag("Integration")
+public class EmployeeSummaryControllerMockServerITTest {
 
     // See https://java.testcontainers.org/modules/mockserver/
     // e.g mockserver/mockserver:5.15.0

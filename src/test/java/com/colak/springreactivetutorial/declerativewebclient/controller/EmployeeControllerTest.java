@@ -1,8 +1,8 @@
 package com.colak.springreactivetutorial.declerativewebclient.controller;
 
-import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeController;
 import com.colak.springreactivetutorial.declerativewebclient.jpa.Employee;
 import com.colak.springreactivetutorial.declerativewebclient.service.EmployeeService;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
@@ -18,6 +18,7 @@ import static org.mockito.Mockito.when;
 
 @WebFluxTest(controllers = EmployeeController.class)
 @AutoConfigureWebTestClient
+@Tag("Unit")
 class EmployeeControllerTest {
 
     @Autowired
