@@ -1,5 +1,6 @@
 package com.colak.springreactivetutorial.declerativewebclient.controller.it;
 
+import com.colak.springreactivetutorial.BaseITTest;
 import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeController;
 import com.colak.springreactivetutorial.declerativewebclient.controller.EmployeeSummaryController;
 import com.colak.springreactivetutorial.declerativewebclient.declarativeclient.EmployeeSummary;
@@ -31,7 +32,7 @@ import static org.mockserver.model.JsonBody.json;
 @Testcontainers
 @Slf4j
 @Tag("Integration")
-public class EmployeeSummaryControllerMockServerITTest {
+public class EmployeeSummaryControllerMockServerITTest extends BaseITTest {
 
     // See https://java.testcontainers.org/modules/mockserver/
     // e.g mockserver/mockserver:5.15.0
