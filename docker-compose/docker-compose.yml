@@ -11,3 +11,16 @@ services:
       POSTGRES_DB: mydb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+
+  redis:
+    container_name: redis
+    image: redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+
+  redis-insight:
+    image: redislabs/redisinsight
+    container_name: redis-insight
+    ports:
+      - "8001:8001"

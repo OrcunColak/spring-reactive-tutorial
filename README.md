@@ -4,6 +4,15 @@ http://localhost:8080/v1/employees
 1. The declarative HTTP Client gets data from an internal REST endpoint  
 2. Test of declarative HTTP Client uses Mock Server to mock the internal REST endpoint
 
+# Reactive Redis
+1. Crud for RedisUser
+2. Publish RedisUser
+
 # API Documentation
-Go to  
-http://localhost:8080/api
+For JSON go to  
+http://localhost:8080/v3/api-docs
+
+For Swagger go to  
+http://localhost:8080/swagger-ui.html   
+or  
+http://localhost:8080/webjars/swagger-ui/index.html
