@@ -53,6 +53,7 @@ public class RedisUserRepository {
 
     public Mono<Long> publishUser(RedisUser user) {
         user.setId(UUID.randomUUID().toString());
+        // Redis Pub/Sub
         return this.reactiveRedisOperations.convertAndSend(LIST_NAME, user);
     }
 }
