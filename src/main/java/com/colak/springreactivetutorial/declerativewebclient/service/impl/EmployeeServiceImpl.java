@@ -6,6 +6,7 @@ import com.colak.springreactivetutorial.declerativewebclient.service.EmployeeSer
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
 @Service
@@ -16,5 +17,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Flux<Employee> findAll() {
         return employeeRepository.findAll();
+    }
+
+    @Override
+    public Mono<Employee> findById(int id) {
+        return employeeRepository.findById(id);
+    }
+
+    @Override
+    public Mono<Void> deleteById(int id) {
+        // If the entity is not found in the persistence store it is silently ignored.
+        return employeeRepository.deleteById(id);
     }
 }
