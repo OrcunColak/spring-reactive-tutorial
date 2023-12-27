@@ -11,4 +11,6 @@ public interface EmployeeService {
 
     Mono<Void> deleteById(int id);
 
+    Mono<Employee> save(Employee employee);
+
 }

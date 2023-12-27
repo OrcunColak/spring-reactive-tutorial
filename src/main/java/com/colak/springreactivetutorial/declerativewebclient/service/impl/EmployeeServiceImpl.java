@@ -29,4 +29,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         // If the entity is not found in the persistence store it is silently ignored.
         return employeeRepository.deleteById(id);
     }
+
+    @Override
+    public Mono<Employee> save(Employee employee) {
+        // If the entity is not found in the persistence store it is silently ignored.
+        return employeeRepository.save(employee);
+    }
 }

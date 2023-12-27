@@ -15,6 +15,7 @@ import reactor.core.publisher.Mono;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.when;
 
 // Load only EmployeeController
@@ -113,5 +114,30 @@ class EmployeeControllerTest {
                 .exchange()
                 .expectStatus()
                 .isNoContent();
+    }
+
+    @Test
+    void save_ok() {
+        var employee = new Employee(1, "employee1", "lastname1");
+
+        when(employeeService.save(isA(Employee.class)))
+                .thenReturn(Mono.just(employee));
+
+        final String url = EmployeeController.EMPLOYEE_URL;
+        webTestClient
+                .post()
+                .uri(url)
+                .bodyValue(employee)
+                .exchange()
+                .expectStatus()
+                .isCreated()
+                .expectBody(Employee.class)
+                .consumeWith(result -> {
+                    var receivedEmployee = result.getResponseBody();
+
+                    assert receivedEmployee != null;
+                    assertEquals(employee.getId(), receivedEmployee.getId());
+
+                });
     }
 }

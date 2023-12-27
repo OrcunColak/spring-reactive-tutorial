@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -41,5 +43,12 @@ public class EmployeeController {
     @Operation(summary = "Delete by id.")
     Mono<Void> deleteById(@PathVariable int id) {
         return employeeService.deleteById(id);
+    }
+
+    @PostMapping(EMPLOYEE_URL)
+    @Operation(summary = "Save Employee.")
+    Mono<ResponseEntity<Employee>> saveTodo(@RequestBody Employee employee) {
+        return employeeService.save(employee)
+                .map(savedTodo -> ResponseEntity.status(HttpStatus.CREATED).body(savedTodo));
     }
 }
